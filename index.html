@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<title>Calculator</title>
+</head>
+<body>
+
+<div id="calculator">
+
+	<form name="mainform">
+		<!-- Text field and keys -->
+		<input name="result" id="resultField"> </br>
+
+		<input type="button" value="7" onclick="digitButton(7)">
+		<input type="button" value="8" onclick="digitButton(8)">
+		<input type="button" value="9" onclick="digitButton(9)">
+		<input type="button" value="+" onclick="operator('+')"> </br>
+		<input type="button" value="4" onclick="digitButton(4)">
+		<input type="button" value="5" onclick="digitButton(5)">
+		<input type="button" value="6" onclick="digitButton(6)">
+		<input type="button" value="-" onclick="operator('-')"> </br>
+		<input type="button" value="1" onclick="digitButton(1)">
+		<input type="button" value="2" onclick="digitButton(2)">
+		<input type="button" value="3" onclick="digitButton(3)">
+		<input type="button" value="*" onclick="operator('*')"> </br>
+		<input type="button" value="0" onclick="digitButton(0)">
+		<input type="button" value="C" onclick="clearButton()">
+		<input type="button" value="=" onclick="equals()">
+		<input type="button" value="/" onclick="operator('/')">
+	</form>
+
+	<script src="logic.js"></script>
+</div>
+
+</body>
+</html>

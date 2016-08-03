@@ -1,0 +1,18 @@
+#calculator {
+    /*background: #000000;*/
+    height: auto;
+    width: 200px;
+}
+
+form input {
+    height: 35px;
+    width: 35px;
+
+    margin-top: 3px;
+}
+
+#resultField {
+    width: 148px;
+    height: 25px;
+
+}
