@@ -27,3 +27,13 @@ function clearButton() {
 function equals() {
     document.mainform.result.value = eval(document.mainform.result.value);
 }
+
+function checkInput(input) {
+    var value = input.value;
+    // Symbols for replace
+    var rep = /[-;":'a-zA-Zа-яА-Я\\=`ё\*++!@#$%\^&_№?><]/;
+    if (rep.test(value)) {
+        value = value.replace(rep, "");
+        input.value = value;
+    }
+}
