@@ -1,31 +1,49 @@
-function digitButton(digit) {
-    var digits = document.mainform.value = digit;
-    console.log(digit);
+var calculator = document.calc;
+var currents = 0;
+var isDigitBtnPressed = false;
+var pendingOperations = "";
 
-    document.mainform.result.value += digits;
+
+// Digits keys handler
+function digitsBtnHandler(digit) {
+    if (isDigitBtnPressed) {
+        calculator.result.value = digit;
+        isDigitBtnPressed = false;
+    } else {
+        if (calculator.result.value == "0") {
+            calculator.result.value = digit;
+        } else {
+            calculator.result.value += digit;
+        }
+    }
 }
 
-function operator(operator) {
-    if (operator === "+") {
-        document.mainform.result.value += "+";
+
+// Operations handler
+function operationsHandler(operation) {
+    var result = calculator.result.value;
+    if (isDigitBtnPressed && pendingOperations != "=") {
+        calculator.result.value = currents;
     }
-    if (operator === "-") {
-        document.mainform.result.value += "-";
-    }
-    if (operator === "/") {
-        document.mainform.result.value += "/";
-    }
-    if (operator === "*") {
-        document.mainform.result.value += "*";
+    else {
+        isDigitBtnPressed = true;
+        if ('+' == pendingOperations)
+            currents += parseFloat(result);
+        else if ('-' == pendingOperations)
+            currents -= parseFloat(result);
+        else if ('/' == pendingOperations)
+            currents /= parseFloat(result);
+        else if ('*' == pendingOperations)
+            currents *= parseFloat(result);
+        else
+            currents = parseFloat(result);
+        calculator.result.value = currents;
+        pendingOperations = operation;
     }
 }
 
 function clearButton() {
-    document.mainform.result.value = "";
-}
-
-function equals() {
-    document.mainform.result.value = eval(document.mainform.result.value);
+    calculator.result.value = "";
 }
 
 function checkInput(input) {

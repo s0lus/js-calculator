@@ -9,26 +9,26 @@
 
 <div id="calculator">
 
-	<form name="mainform">
+	<form name="calc">
 		<!-- Text field and keys -->
-		<input name="result" id="resultField" onkeyup="checkInput(this)"> </br>
+		<input name="result" id="resultField" placeholder="0" onkeyup="checkInput(this)"> <br>
 
-		<input type="button" value="7" onclick="digitButton(7)">
-		<input type="button" value="8" onclick="digitButton(8)">
-		<input type="button" value="9" onclick="digitButton(9)">
-		<input type="button" value="+" onclick="operator('+')"> </br>
-		<input type="button" value="4" onclick="digitButton(4)">
-		<input type="button" value="5" onclick="digitButton(5)">
-		<input type="button" value="6" onclick="digitButton(6)">
-		<input type="button" value="-" onclick="operator('-')"> </br>
-		<input type="button" value="1" onclick="digitButton(1)">
-		<input type="button" value="2" onclick="digitButton(2)">
-		<input type="button" value="3" onclick="digitButton(3)">
-		<input type="button" value="*" onclick="operator('*')"> </br>
-		<input type="button" value="0" onclick="digitButton(0)">
+		<input type="button" value="7" onclick="digitsBtnHandler(7)">
+		<input type="button" value="8" onclick="digitsBtnHandler(8)">
+		<input type="button" value="9" onclick="digitsBtnHandler(9)">
+		<input type="button" value="+" onclick="operationsHandler('+')"> <br>
+		<input type="button" value="4" onclick="digitsBtnHandler(4)">
+		<input type="button" value="5" onclick="digitsBtnHandler(5)">
+		<input type="button" value="6" onclick="digitsBtnHandler(6)">
+		<input type="button" value="-" onclick="operationsHandler('-')"> <br>
+		<input type="button" value="1" onclick="digitsBtnHandler(1)">
+		<input type="button" value="2" onclick="digitsBtnHandler(2)">
+		<input type="button" value="3" onclick="digitsBtnHandler(3)">
+		<input type="button" value="*" onclick="operationsHandler('*')"> <br>
+		<input type="button" value="0" onclick="digitsBtnHandler(0)">
 		<input type="button" value="C" onclick="clearButton()">
-		<input type="button" value="=" onclick="equals()">
-		<input type="button" value="/" onclick="operator('/')">
+		<input type="button" value="=" onclick="operationsHandler('=')">
+		<input type="button" value="/" onclick="operationsHandler('/')">
 	</form>
 
 	<script src="logic.js"></script>
